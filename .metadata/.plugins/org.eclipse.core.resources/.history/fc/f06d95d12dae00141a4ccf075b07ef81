@@ -1,0 +1,16 @@
+package SupplyChain;
+
+public class Item {
+	
+	private String manufacturerName;
+	private ProductType productType;
+	private float unitPrice;
+	private int quantity;
+	
+	public Item(String manufacturerName, ProductType productType, float unitPrice, int quantity){
+		this.manufacturerName = manufacturerName;
+		this.productType = productType;
+		this.unitPrice = unitPrice;
+		this.quantity = quantity;
+	}
+}

@@ -1,0 +1,5 @@
+package SupplyChain;
+
+public enum ProductType {
+	DVDPLAYER, VideoCamera, TV
+};

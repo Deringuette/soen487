@@ -1,0 +1,13 @@
+package SupplyChain;
+
+public class PurchaseOrder {
+	private String orderNum;
+	private String customerRef;
+	private Product product;
+	private int quantity;
+	private float unitPrice;
+	
+	public void PurchaseOrder(){
+		
+	}
+}

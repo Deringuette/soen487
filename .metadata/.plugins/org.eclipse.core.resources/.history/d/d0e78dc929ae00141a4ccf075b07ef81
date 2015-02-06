@@ -1,0 +1,17 @@
+package SupplyChain;
+
+public class Product {
+	public enum ProductType { DVDPLAYER, VideoCamera, TV };
+	
+	private ProductType productType;
+	private String manufacturerName;
+	private float unitPrice;
+	
+	public void Product(ProductType productType, String manufacturerName, float unitPrice){
+		this.productType = productType;
+		this.manufacturerName = manufacturerName;
+		this.unitPrice = unitPrice;
+	}
+	
+	
+}

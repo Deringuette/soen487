@@ -1,0 +1,10 @@
+package SupplyChain;
+
+public class Product {
+	public enum ProductType { DVDPLAYER, VideoCamera, TV };
+	manufacturerName (String),
+	productType (String),
+	unitPrice (float). productType should from the categories specied.
+	
+	
+}

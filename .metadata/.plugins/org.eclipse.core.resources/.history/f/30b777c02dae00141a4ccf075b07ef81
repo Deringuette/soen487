@@ -1,0 +1,8 @@
+package SupplyChain;
+
+public class Item {
+	private String manufacturerName;
+	private ProductType productType;
+	private float unitPrice;
+	private int quantity;
+}
