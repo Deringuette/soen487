@@ -20,18 +20,18 @@ import javax.xml.transform.stream.StreamResult;
 import org.w3c.dom.Document;
 import org.xml.sax.SAXException;
 
-public class RSSFeedRetriever {
+public class XMLRetriever {
 
-	public static void retrieveRssFeed(){
+	public static void requestXML(String url, String outputFile){
 		try {
-			retrieveRssFeed(new URL("http://www.ledevoir.com/rss/ledevoir.xml"));
+			requestXML(new URL(url), outputFile);
 		} catch (MalformedURLException e) {
 			System.out.println("MalformedURLException has been caught.");
 			e.printStackTrace();
 		}
 	}
 	
-	public static void retrieveRssFeed(URL rssURL){
+	public static void requestXML(URL rssURL, String outputFile){
 	try {
 		
 		HttpURLConnection connection = (HttpURLConnection) rssURL.openConnection();
@@ -49,7 +49,7 @@ public class RSSFeedRetriever {
 		
 		DOMSource source = new DOMSource(myDocument);
 		
-		StreamResult streamResult =  new StreamResult(new File("XMLResources/rssNews.xml"));
+		StreamResult streamResult =  new StreamResult(new File(outputFile));
 		transformer.transform(source, streamResult);
 		
 	} catch (ProtocolException e) {
@@ -73,8 +73,6 @@ public class RSSFeedRetriever {
 	public static void listTitleElements(){
 	}
 
-	public static void main (String[] args){
-			retrieveRssFeed();
-	}
+	
 		
 }
