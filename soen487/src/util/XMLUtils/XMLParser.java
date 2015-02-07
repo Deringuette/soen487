@@ -1,12 +1,20 @@
 package util.XMLUtils;
 
+import javax.xml.bind.DatatypeConverter;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.SAXParser;
+import javax.xml.parsers.SAXParserFactory;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.NodeList;
 import org.w3c.dom.Node;
 import org.w3c.dom.Element;
+import org.xml.sax.Attributes;
+import org.xml.sax.SAXException;
+import org.xml.sax.helpers.DefaultHandler;
+
+import com.sun.org.apache.xerces.internal.parsers.DOMParser;
 
 import java.io.File;
 
@@ -14,7 +22,8 @@ import java.io.File;
 public class XMLParser {
 	  public static void main(String argv[]) {
 		  parseRSS("soen487/XMLResources/rssNews.xml", "item");
-		  parseXML("soen487/XMLResources/marfSample1.xml", "item");
+		  //parseXML("soen487/XMLResources/marfSample1.xml", "item");
+		  //parse("soen487/XMLResources/rssNews.xml");
 		  
 	  }
 	  
@@ -26,27 +35,29 @@ public class XMLParser {
 				DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
 				Document doc = dBuilder.parse(fXmlFile);
 			 
+				XMLParserHelper xmlHelper = new XMLParserHelper();
+				
 				//optional, but recommended
 				//read this - http://stackoverflow.com/questions/13786607/normalization-in-dom-parsing-with-java-how-does-it-work
-				doc.getDocumentElement().normalize();
+				//doc.getDocumentElement().normalize();
 			 
-				System.out.println("Root element :" + doc.getDocumentElement().getNodeName());
+				//System.out.println("Root element :" + doc.getDocumentElement().getNodeName());
 			 
 				NodeList nodeList = doc.getElementsByTagName(tagName);
 			 
-				System.out.println("----------------------------");
+				//System.out.println("----------------------------");
 			 
 				for (int i = 0; i < nodeList.getLength(); i++) {
 			 
 					Node node = nodeList.item(i);
 			 
-					System.out.println("\nCurrent Element :" + node.getNodeName());
+					//System.out.println("\nCurrent Element :" + node.getNodeName());
 			 
 					if (node.getNodeType() == Node.ELEMENT_NODE) {
 			 
-						Element element = (Element) node;
+						//Element element = (Element) node;
 			 
-						System.out.println("Title : " + element.getElementsByTagName("title").item(0).getTextContent());
+						System.out.println("Title : " +  xmlHelper.getNodeValue("title", node.getChildNodes()));//element.getElementsByTagName("title").item(0).getTextContent());
 			 
 					}
 				}
@@ -99,5 +110,40 @@ public class XMLParser {
 		    catch (Exception e) {
 		    	e.printStackTrace();
 		    }
+	  }
+	  
+	  public static void parse(String fileName){
+		  try {
+	            SAXParserFactory factory = SAXParserFactory.newInstance();
+	            SAXParser saxParser = factory.newSAXParser();
+
+	            DefaultHandler handler = new DefaultHandler() {
+
+	                StringBuilder value;
+
+	                public void startElement(String uri, String localName, String qName,Attributes attribtues) throws SAXException {
+	                    value = new StringBuilder();
+	                }
+
+	                public void endElement(String uri, String localName, String qName) throws SAXException {
+	                    if ("fileContent".equalsIgnoreCase(qName)) {
+	                        String decodedValue = new String(DatatypeConverter.parseBase64Binary(value.toString()));
+	                        System.out.println(qName + " = " + decodedValue);
+	                    } else {
+	                        System.out.println(qName + " = " + value);
+	                    }
+	                    value = new StringBuilder();
+	                }
+
+	                public void characters(char ch[], int start, int length) throws SAXException {
+	                    value.append(new String(ch, start, length));
+	                }
+
+	            };
+
+	            saxParser.parse(new File(fileName), handler);
+	        } catch (Exception e) {
+	            e.printStackTrace();
+	        }  
 	  }
 }
