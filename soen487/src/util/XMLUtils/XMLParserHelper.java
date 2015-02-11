@@ -9,7 +9,7 @@ public class XMLParserHelper {
 		
 	}
 	
-	protected Node getNode(String tagName, NodeList nodes) {
+	public static Node getNode(String tagName, NodeList nodes) {
 		for ( int x = 0; x < nodes.getLength(); x++ ) {
 			Node node = nodes.item(x);
 	        if (node.getNodeName().equalsIgnoreCase(tagName)) {
@@ -20,7 +20,7 @@ public class XMLParserHelper {
 	    return null;
 	}
 	 
-	protected String getNodeValue( Node node ) {
+	public static String getNodeValue( Node node ) {
 	    NodeList childNodes = node.getChildNodes();
 	    for (int x = 0; x < childNodes.getLength(); x++ ) {
 	        Node data = childNodes.item(x);
@@ -30,7 +30,7 @@ public class XMLParserHelper {
 	    return "";
 	}
 	 
-	protected String getNodeValue(String tagName, NodeList nodes ) {
+	public static String getNodeValue(String tagName, NodeList nodes ) {
 	    for ( int x = 0; x < nodes.getLength(); x++ ) {
 	        Node node = nodes.item(x);
 	        if (node.getNodeName().equalsIgnoreCase(tagName)) {
@@ -45,7 +45,7 @@ public class XMLParserHelper {
 	    return "";
 	}
 	 
-	protected String getNodeAttr(String attrName, Node node ) {
+	public static String getNodeAttr(String attrName, Node node ) {
 	    NamedNodeMap attrs = node.getAttributes();
 	    for (int y = 0; y < attrs.getLength(); y++ ) {
 	        Node attr = attrs.item(y);
@@ -56,7 +56,7 @@ public class XMLParserHelper {
 	    return "";
 	}
 	 
-	protected String getNodeAttr(String tagName, String attrName, NodeList nodes ) {
+	public static String getNodeAttr(String tagName, String attrName, NodeList nodes ) {
 	    for ( int x = 0; x < nodes.getLength(); x++ ) {
 	        Node node = nodes.item(x);
 	        if (node.getNodeName().equalsIgnoreCase(tagName)) {
