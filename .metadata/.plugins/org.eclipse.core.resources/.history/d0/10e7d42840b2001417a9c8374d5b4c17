@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:noNamespaceSchemaLocation="ProductList.xsd">
+<xsd:element name="ProductList" minoccurs="1" maxoccurs="1">
+	<xsd:complexType>
+		<xsd:sequence>
+			<xsd:element name="Product" minoccurs="1" maxoccurs="unbounded">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="Name" type="xsd:string" />
+						<xsd:element name="CatNumber" type="xsd:string" />
+						<xsd:element name="Type" type="xsd:string" />
+						<xsd:element name="Price" type="xsd:decimal" />
+						<xsd:element name="ModelStock" type="xsd:integer" />
+						<xsd:element name="CurrentStock" type="xsd:integer" />
+						<xsd:element name="OnOrderQty" type="xsd:integer" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:element>

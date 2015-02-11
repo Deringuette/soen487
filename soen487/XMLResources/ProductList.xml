@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ProductList xmlns="ProductList.xsd">
+	<Product>
+		<Name>Kobayashi X950</Name>
+		<CatNumber>as5f4g31f</CatNumber>
+		<Type>TV</Type>
+		<Price>699.99</Price>
+		<ModelStock>5<ModelStock>
+		<CurrentStock>9</CurrentStock>
+		<OnOrderQty>0</OnOrderQty>
+	</Product>
+	<Product>
+		<Name>Kobayashi X1050</Name>
+		<CatNumber>as5f4g88h</CatNumber>
+		<Type>TV</Type>
+		<Price>899.99</Price>
+		<ModelStock>8<ModelStock>
+		<CurrentStock>15</CurrentStock>
+		<OnOrderQty>0</OnOrderQty>
+	</Product>
+	<Product>
+		<Name>Kobayashi X1250</Name>
+		<CatNumber>as5f4e96a</CatNumber>
+		<Type>TV</Type>
+		<Price>1299.99</Price>
+		<ModelStock>4<ModelStock>
+		<CurrentStock>4</CurrentStock>
+		<OnOrderQty>0</OnOrderQty>
+	</Product>
+	<Product>
+		<Name>Reno 500</Name>
+		<CatNumber>ads65f4</CatNumber>
+		<Type>Video Camera</Type>
+		<Price>359.99</Price>
+		<ModelStock>3<ModelStock>
+		<CurrentStock>3</CurrentStock>
+		<OnOrderQty>0</OnOrderQty>
+	</Product>
+	<Product>
+		<Name>Reno 600</Name>
+		<CatNumber>ads88x9</CatNumber>
+		<Type>Video Camera</Type>
+		<Price>459.99</Price>
+		<ModelStock>4<ModelStock>
+		<CurrentStock>4</CurrentStock>
+		<OnOrderQty>0</OnOrderQty>
+	</Product>
+	<Product>
+		<Name>Reno 900</Name>
+		<CatNumber>ads98x0</CatNumber>
+		<Type>Video Camera</Type>
+		<Price>499.99</Price>
+		<ModelStock>4<ModelStock>
+		<CurrentStock>4</CurrentStock>
+		<OnOrderQty>0</OnOrderQty>
+	</Product>
+	<Product>
+		<Name>Soomba B50</Name>
+		<CatNumber>sd8f41sd50</CatNumber>
+		<Type>DVD Player</Type>
+		<Price>89.99</Price>
+		<ModelStock>12<ModelStock>
+		<CurrentStock>15</CurrentStock>
+		<OnOrderQty>0</OnOrderQty>
+	</Product>
+	<Product>
+		<Name>Soomba B80</Name>
+		<CatNumber>sd8f41sd80</CatNumber>
+		<Type>DVD Player</Type>
+		<Price>109.99</Price>
+		<ModelStock>10<ModelStock>
+		<CurrentStock>12</CurrentStock>
+		<OnOrderQty>0</OnOrderQty>
+	</Product>
+	<Product>
+		<Name>Soomba B90</Name>
+		<CatNumber>sd8f41sd90</CatNumber>
+		<Type>DVD Player</Type>
+		<Price>129.99</Price>
+		<ModelStock>8<ModelStock>
+		<CurrentStock>10</CurrentStock>
+		<OnOrderQty>0</OnOrderQty>
+	</Product>
+</ProductList>
