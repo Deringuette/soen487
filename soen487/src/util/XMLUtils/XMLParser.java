@@ -1,8 +1,5 @@
 package util.XMLUtils;
 
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.DocumentBuilder;
-
 import org.w3c.dom.Document;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.NodeList;
@@ -10,21 +7,19 @@ import org.w3c.dom.Node;
 
 import com.sun.org.apache.xerces.internal.parsers.DOMParser;
 
-import java.io.File;
-
 
 public class XMLParser {
 	  public static void main(String argv[]) {
-		  //parseRSS("soen487/XMLResources/rssNews.xml", "item");
-		  //parse("soen487/XMLResources/rssNews.xml");
-		  //parseNeural("soen487/XMLResources/marfSample1.xml", "neuron");
+		  parse("soen487/XMLResources/rssNews.xml", "title");
+		  //parse("soen487/XMLResources/marfSample1.xml");
 		  //parse("soen487/XMLResources/marfcat-in.xml");
 		  //parse("soen487/XMLResources/marfcat-out.xml");
-		  parse("soen487/XMLResources/faultSample.wsdl");
+		  //parse("soen487/XMLResources/faultSample.wsdl");
 		  
 	  }
 	  
-	  public static void parseRSS(String fileName, String tagName){
+	  //legacy code
+	  /*public static void parseRSS(String fileName, String tagName){
 		  try {	 
 				File fXmlFile = new File(fileName);
 				DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
@@ -50,7 +45,7 @@ public class XMLParser {
 		    catch (Exception e) {
 		    	e.printStackTrace();
 		    }
-	  }
+	  }*/
 	  
 	  //legacy code
 	  /*public static void parseNeural(String fileName, String tagName){
